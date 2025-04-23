@@ -5,7 +5,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 //CREO FUNZIONE POSTLIST
-function PostList() {
+function PostsList() {
   //CREO STATO PER METTERE I POST IN PAGINA
   const [posts, setPosts] = useState([]);
   //CREO CHIAMATA AXIOS CON USE EFFECT
@@ -32,4 +32,4 @@ function PostList() {
 }
 
 //ESPORTO
-export default PostList;
+export default PostsList;
