@@ -19,7 +19,6 @@ function PostsList() {
 
   return (
     <div className="post-list">
-      <h3>Lista dei miei post:</h3>
       <ul>
         {posts.map((post) => (
           <li key={post.id}>
