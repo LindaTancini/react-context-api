@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import PostCard from "./PostsCard";
 
 //CREO FUNZIONE POSTLIST
 function PostsList() {
@@ -19,13 +19,10 @@ function PostsList() {
 
   return (
     <div className="post-list">
-      <ul>
-        {posts.map((post) => (
-          <li key={post.id}>
-            <Link to={`/posts/${post.id}`}>{post.title}</Link>
-          </li>
-        ))}
-      </ul>
+      {posts.map((post) => (
+        //PASSIAMO LE PROPS A POSTCARD
+        <PostCard key={post.id} post={post} />
+      ))}
     </div>
   );
 }
