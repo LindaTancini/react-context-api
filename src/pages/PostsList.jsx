@@ -1,21 +1,10 @@
 //IMPORTAZIONI
-import { useState } from "react";
-import { useEffect } from "react";
-import axios from "axios";
 import PostCard from "./PostsCard";
+import { usePosts } from "../contexts/PostsContext";
 
-//CREO FUNZIONE POSTLIST
+// USO L'HOOK PERSONALIZZATO PER PRENDERE I DATI DEI POST
 function PostsList() {
-  //CREO STATO PER METTERE I POST IN PAGINA
-  const [posts, setPosts] = useState([]);
-  //CREO CHIAMATA AXIOS CON USE EFFECT
-  const endpoint = "https://jsonplaceholder.typicode.com/posts";
-  useEffect(() => {
-    axios
-      .get(endpoint)
-      .then((res) => setPosts(res.data))
-      .catch((err) => console.error("Errore:", err));
-  }, []);
+  const { posts } = usePosts();
 
   return (
     <div className="post-list">
