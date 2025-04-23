@@ -29,4 +29,4 @@ function usePosts() {
 }
 
 //ESPORTIAMO IL PROVIDER E L'HOOK
-export { PostsContext, usePosts };
+export { PostsContext, usePosts, PostsProvider };
